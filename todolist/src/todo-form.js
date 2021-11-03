@@ -22,16 +22,16 @@ const TodoForm = (props)=>{
         setInput('')
     }
     return(
-        <form className='todoForm' onSubmit={handleSubmit}>
+        <form className='todo-form' onSubmit={handleSubmit}>
         {props.edit ? ( 
         <div>
         <input type="text" placeholder="Update your item " value={input} name='text' className = 'todo-input edit' onChange={handleChange} ref={inputRef} />
-        <button className="todo-btn edit">Update todo</button>
+        <button className="todo-button edit">Update todo</button>
         </div>) : 
         (
         <div>
         <input type="text" placeholder="Add a todo " value={input} name='text' className = 'todo-input' onChange={handleChange} ref={inputRef} />
-        <button className="todo-btn">Add todo</button>
+        <button className="todo-button">Add todo</button>
         </div>
       
         )}
