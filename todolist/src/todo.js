@@ -11,6 +11,7 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
     })
     const submitUpdate = value => {
         updateTodo(edit.id, value)
+        //setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
         setEdit({
             id: null,
             value: ''
@@ -20,6 +21,16 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
     if(edit.id){
         return <TodoForm edit={edit} onSubmit = {submitUpdate} />
     }
+
+    //const completeTodo = (id)=>{
+//         let updateTodos = todos.map(todo => {
+//             if(todo.id === id){
+//                 todo.isComplete = !todo.isComplete
+//             }
+//             return todo
+//         })
+//         setTodos(updateTodos)
+// }
 
     return todos.map((todo, index)=>(
         <div className={todo.isComplete ? 'todo.row complete':'todo-row'} key={index}>

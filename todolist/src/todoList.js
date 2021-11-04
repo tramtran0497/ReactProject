@@ -13,13 +13,14 @@ const TodoList = ()=>{
 
 const updateTodo = (todoId, newValue)=>{
     if(!newValue.text){return}
+    // prev??
     setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
 }
 
 const removeTodo = (id)=>{
-    const removeArr = [...todos].filter(todo => todo.id !== id)
+    const newArr = [...todos].filter(todo => todo.id !== id)
 
-    setTodos(removeArr)
+    setTodos(newArr)
 }
 
 
